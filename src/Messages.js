@@ -3,6 +3,7 @@ import React from "react";
 const Messages = props => {
   //try destrcturing(more readable)
   return (
+    
     <section>
       {props.messages.map(m => {
         return (
@@ -12,8 +13,9 @@ const Messages = props => {
                 <div className="col-xs-2">
                   <input
                     type="checkbox"
-                    checked={getSelected(m)}
+
                     onClick={() => props.onSelectedClick(m)}
+                    checked={isSelected(m)}
                   />
                 </div>
                 <div className="col-xs-2">
@@ -64,11 +66,8 @@ const getStars = m => {
   return cls.join(" ");
 };
 
-const getSelected = m => {
-  const checked = [];
-  if (m.selected) {
-    checked.push(" ");
-  }
-};
+const isSelected = m => m.selected
+
+
 
 export default Messages;

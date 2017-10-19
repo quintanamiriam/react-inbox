@@ -18,10 +18,20 @@ onStarClick = (m) => {
   })
 }
 
+onSelectedClick = (m) => {
+  m.selected = !m.selected
+  this.setState({
+    messages:this.state.messages
+  })
+}
+
   render() {
     return (
       <div className="App">
-        <Messages messages={ this.state.messages } onStarClick={this.onStarClick}/>
+        <Messages messages={ this.state.messages } onStarClick={this.onStarClick
+         } onSelectedClick={this.onSelectedClick
+        }
+        />
 
       </div>
     );
